@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title></title>
+<link href='signup.css' rel='stylesheet' type='text/css'>
+<script >
+function confirm()
+{
+	var password=document.getElementById("pass");
+	var pass=password.value;
+	var confirm=document.getElementById("pass1")
+	var conf_pass=confirm.value;
+	if(pass != conf_pass)
+	{
+		alert("wrong confirm password");
+		password.value=null;
+		confirm.value=null;
+		password.focus();
+	}
+}
+
+function check_enable()
+{
+	
+	ch=document.getElementById("check");
+	butt=document.getElementById("submit");
+	if(ch.checked)
+	{
+		butt.disabled=false;
+		butt.style.backgroundColor="#2a78f6";
+	}
+	else
+	{
+		butt.disabled=true;
+		butt.style.backgroundColor="grey";
+	}
+		
+}
+
+function closebox()
+{
+	var show=document.getElementById("pop");
+	var password=document.getElementById("pass");
+	show.style.display="none";
+	password.focus();
+}
+</script>
+
+</head>
+<body>
+<div  class="form">
+<center>
+	<h2><u>SIGN UP </u></h2>
+<form method="GET" action="#">
+Name:<br><br><input type="text" name="name" id="name"><br><br><br>
+
+Email:<br><br><input type="email" name="usn" id="email" required><br><br><br>
+
+Password:<br><br><input type="password" name="pass" id="pass"><br><br><br>
+
+Conform Password:<br><br><input type="password" name="pass1" id="pass1" onblur="confirm()"><br><br><br>
+
+<input type="checkbox" name="check" id="check" onclick="check_enable()">I Agree<br><br><br>
+
+<input class="submit" type="submit" value="Submit" id="submit" disabled><br><br>
+</form>
+
+</center>
+</div>
+
+</body>
+</html>

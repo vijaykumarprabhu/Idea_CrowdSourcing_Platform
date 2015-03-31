@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="http://fonts.googleapis.com/css?family=Merienda+One" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="js/bootstrap_min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script>
+
+        function post()
+        {
+            var username=$('#username').val();
+            var password=$('#password').val();
+            
+
+        }
+
+        //called when the cancel button is pressed in the popup appeared after clicking answer button
+        function cancel()
+        {
+            
+            document.getElementById('fade').style.display = 'none';
+            document.getElementById('light').style.display = 'none';
+
+        }
+
+        function disp()
+        {
+           
+            document.getElementById('fade').style.display = 'block';
+            document.getElementById('light').style.display = 'block';
+
+        }
+
+
+        count=4;
+        function loadimg()
+        {
+          if(count >0)
+          {      
+              img=document.getElementById("imgid");
+              img.src="static/image"+count+".jpg";
+
+              if(count==2)
+              {  
+                document.getElementById('onimg').innerHTML = '<h2><span>CROWD SOURCING OF IDEAS</span></h2>';
+              }
+              else if(count==3)
+              {
+               document.getElementById('onimg').innerHTML = '<h2><span>PREVENTION AND CONTROL OF VECTOR BORNE DISEASES</span></h2>'; 
+              }
+              else
+              {
+                document.getElementById('onimg').innerHTML = ''; 
+              } 
+        
+              count--;
+          }
+          else
+          {
+              count=4;
+          } 
+      
+        }
+    
+        function foo()
+        {
+      
+          setInterval(loadimg,3500);
+        } 
+
+        
+
+
+
+    </script>
+
+        <style>
+            
+            body
+            {
+              background-color:#f3f3f3;
+            }
+            .black_overlay{
+                display: none;
+                position: fixed;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+            .white_content {
+                display: none;
+                position:fixed;
+                top: 25%;
+                left: 25%;
+                padding: 16px;
+                border: 5px solid silver;
+                background-color: white;
+                z-index:1002;
+                overflow: auto;
+            }
+
+          .navbar-inverse .navbar-nav>li>a{color:white}
+
+          li{
+            margin-top: 4%;
+            margin-bottom: 3.5%;
+            }
+          #logo
+          {
+            margin-top: 0.5%;
+            margin-bottom: 0.5%;
+            padding-right: 2%;
+          }
+
+          .navbar-inverse .navbar-nav>li>a{color:white}
+
+          nav a:hover{
+            border-color: #20a8a6;
+            text-decoration:none;
+            color:inherit;
+          }
+
+          nav a{
+            color:#fff;
+            border-bottom: 2px solid transparent;
+            cursor:pointer;
+          }
+
+          #slideshow
+          {
+            width:100%;
+            padding-left: 1%;
+            padding-right: 1%;
+          }
+
+          #slideshow img{
+            width:100%;
+            
+
+          
+          }
+
+          #imgid
+          {
+            position:relative;
+            top:0;
+            left:0;
+            z-index: 100;
+          }
+
+          #onimg
+          {
+            position:absolute;
+            left:60%;
+            top:50%;
+            width:35%;
+            height:auto;
+            z-index:101;
+            background: rgba(0, 0, 0, 0.7);
+            
+            
+
+
+          }
+
+          h2 span { 
+            color: white; 
+            font: bold 24px/45px Helvetica, Sans-Serif;
+            padding-left: 3%;
+             
+             
+          }
+
+
+
+          #highlights {
+            width :100%;
+            margin-left:1%;
+            margin-right:1%;
+            padding-top: 1%;
+            text-align: justify;
+            
+
+          }
+          #content_one {
+            width : 360px;
+            height : auto;
+            float : left;  
+          }
+
+          #content_two {
+            width : 360px;
+            height : auto;
+            float : left;
+            margin-left : 55px;
+
+          }
+                
+          #content_three {
+            width : 360px;
+            height : auto;
+            float : left;
+            margin-left : 55px;
+          }
+                
+          .content_body img
+          {
+            padding:3px;
+            border: 3px solid grey;
+
+          }      
+          .content_body{
+          
+              height : auto;
+              float : left;
+              font: 400 100px/1.2 'Merienda One', Helvetica, sans-serif;
+              font-size : 15px;
+              color : #9a9a9a;
+            }
+
+          .content_heading{
+              font: 400 100px/1.2 'Merienda One', Helvetica, sans-serif;
+              font-size : 16px;
+
+          }
+
+
+
+          
+      </style>
+
+
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+
+
+<body onload="foo()">
+
+  <nav class="navbar navbar-inverse">
+    
+      <div class="navbar-header" id="logo">
+        <img src="static/logo.png" width="150" height="70"/>
+      </div>
+      <div id="header">
+          <ul class="nav navbar-nav">
+              <li><a href="index.php" >HOME</a></li>
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">CATEGORIES<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="">SWACHH BHARAT</a></li>
+                      <li><a href="">CLEAN GANGA</a></li>
+                      <li><a href="">FOOD SECURITY</a></li>
+                      <li><a href=""> Beti Bachao Beti Padhao</a></li>
+                  </ul>
+                </li>
+              <li><a href="">ABOUT US</a></li>
+              <li><a href="form.html"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>
+              <li><a href="javascript:void(0)" onclick = "disp();"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a>
+              </li>
+          </ul>              
+
+                    
+        <!-- popup of signin-->
+        <div id="light" class="white_content" style="width:40%; height:40%">  
+          <form role="form">       
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+    
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox"> Remember me</label>
+            </div>
+            
+            <button type="button" class="btn btn-info" onclick ="post();">Login</button>
+            <button type="button" class="btn btn-danger" onclick ="cancel();">Close</button>
+          </form>
+        </div>
+        <div id="fade" class="black_overlay"></div>
+    </div><!-- end of div header -->
+  </nav>
+
+
+
+<div class="container-fluid">
+
+  <div id="slideshow">
+
+     <div id="onimg"></div>
+      <img id="imgid" src="static/image1.jpg" alt="no img found" height="400px">
+  </div><!-- end of div slideshow -->
+
+  <center><h1 style="padding-top:1%">HIGHLIGHTS</h1></center>
+
+
+  <div id="highlights">
+
+
+    <div id="content_one">
+
+        <div class="content_heading">
+          <b>Food Security</b> 
+        </div>
+
+        <div id="content_body1" class="content_body">
+          <img src="static/food_security.jpg" width="350" height="200"/>
+          This Group has been constituted by the Department of Food and Public Distribution to engage the people and involve them in the initiatives being taken by the Department for bringing about improvement in its areas of operation.
+        </div>
+
+
+    </div>
+
+
+
+    <div id="content_two">
+
+        <div class="content_heading"><b>
+          Clean Ganga
+        </b> </div>
+
+        <div id="content_body2" class="content_body">
+          <img src="static/clean_ganga.jpg" width="350" height="200"/>
+          This Group is a determined effort to seek ideas and opinions on how to clean the Ganga and restore the glory of this pristine river that is India’s pride.
+          
+        </div>
+
+    </div>
+
+    <div id="content_three">
+
+        
+        <div class="content_heading"><b>
+          Beti Bachao Beti Padhao 
+        </b> </div>
+
+        <div id="content_body3" class="content_body">
+          <img src="static/beti_bacho.jpg" width="350" height="200"/>
+          To engage with the nation, we are launching this Beti Bachao Bati Padhao Group on MyGov platform in order to seek active participation, engagement and whole hearted support in making this initiative of the Government a grand success.
+          
+        </div>
+
+    </div>  
+  </div><!-- end of highlights-->
+
+
+
+</div><!-- end of div container-fluid -->  
+</body>
+</html>
+

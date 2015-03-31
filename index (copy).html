@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <link rel="stylesheet" href="css/bootstrap.css">
+	<script>
+
+        function post()
+        {
+            var username=$('#username').val();
+            var password=$('#password').val();
+            
+
+        }
+
+        function f()
+        {
+           
+            document.getElementById('fade').style.display = 'block';
+            document.getElementById('light').style.display = 'block';
+
+        }
+
+        //called when the cancel button is pressed in the popup appeared after clicking answer button
+        function cancel()
+        {
+            
+            document.getElementById('fade').style.display = 'none';
+            document.getElementById('light').style.display = 'none';
+
+        }
+
+        </script>
+
+        <style>
+            
+            .black_overlay{
+                display: none;
+                position: fixed;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                z-index:1001;
+                -moz-opacity: 0.8;
+                opacity:.80;
+                filter: alpha(opacity=80);
+            }
+            .white_content {
+                display: none;
+                position:fixed;
+                top: 25%;
+                left: 25%;
+                width: 50%;
+                height: 50%;
+                padding: 16px;
+                border: 5px solid silver;
+                background-color: white;
+                z-index:1002;
+                overflow: auto;
+            }
+
+          .navbar-inverse .navbar-nav>li>a{color:white}
+        </style>
+
+
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">My-Government</a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">swachh Bharath</a></li>
+            <li><a href="#">clean ganga</a></li>
+            <li><a href="#">digital india</a></li>
+          </ul>
+        </li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Page 4</a></li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="javascript:void(0)" onclick = "f();"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+
+<div class="container">
+  
+  <div class="jumbotron"> 
+    <h1>Idea crowdsourcing platform!</h1>      
+    <p>Sum is greater than parts. Wisdom of crowd in undeniable.</p>      
+    <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-search"></span> Search</a>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <p>We would like your expert advice, thoughts and ideas on various topics that concern India.Join the discussion to share debate and add value.</p>
+    </div>
+    <div class="col-md-4"> 
+      <p>There is work to be done and nation to be built. Find little tasks that interest you and do your bit for india.</p>
+    </div>
+   
+    <div class="col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">swachh bharath</a></li>
+            <li><a href="#">clean ganga</a></li>
+            <li><a href="#">digital India</a></li>                        
+          </ul>
+        </li> 
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </div>
+    <div class="clearfix visible-lg"></div>
+  </div>
+</div>
+
+		 <!-- popup of signin-->
+     <div id="light" class="white_content"><br>
+                        
+     	<form role="form">       
+       	<div class="form-group">
+      		<label for="email">Email:</label>
+      		<input type="email" class="form-control" id="email" placeholder="Enter email">
+    	 	</div>
+    
+    		<div class="form-group">
+      		<label for="pwd">Password:</label>
+      		<input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    		</div>
+    		<div class="checkbox">
+      		<label><input type="checkbox"> Remember me</label>
+    		</div>
+    		<button type="submit" class="btn btn-info">Submit</button>
+    		<button type="button" class="btn btn-danger" onclick ="cancel();"">Close</button>
+  		</form>
+      
+       
+                      
+                    
+     </div>
+     <div id="fade" class="black_overlay"> 
+
+</body>
+</html>
+
